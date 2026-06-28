@@ -1,0 +1,51 @@
+
+import os
+
+def create_visual_schema():
+    """Generates a clean HTML-based visual database map for the project presentation panel."""
+    html_content = """<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f9; padding: 20px; display: flex; gap: 30px; justify-content: center; }
+            .table-card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 280px; overflow: hidden; border: 1px solid #e1e4e8; }
+            .header { background: #2e7d32; color: white; padding: 12px; font-weight: bold; text-align: center; font-size: 15px; }
+            .header.blue { background: #1565c0; }
+            .header.purple { background: #6a1b9a; }
+            .row { padding: 10px 15px; border-bottom: 1px solid #f0f2f5; display: flex; justify-content: space-between; font-size: 13px; color: #333; }
+            .row:last-child { border-bottom: none; }
+            .type { color: #757575; font-style: italic; font-size: 11px; }
+        </style>
+    </head>
+    <body>
+        <div class="table-card">
+            <div class="header">SOIL_METRICS (Input)</div>
+            <div class="row"><span>nitrogen</span><span class="type">INT</span></div>
+            <div class="row"><span>phosphorous</span><span class="type">INT</span></div>
+            <div class="row"><span>potassium</span><span class="type">INT</span></div>
+            <div class="row"><span>ph_level</span><span class="type">FLOAT</span></div>
+        </div>
+        <div class="table-card">
+            <div class="header blue">CLIMATE_METRICS (Input)</div>
+            <div class="row"><span>temperature</span><span class="type">FLOAT</span></div>
+            <div class="row"><span>humidity</span><span class="type">FLOAT</span></div>
+            <div class="row"><span>rainfall</span><span class="type">FLOAT</span></div>
+        </div>
+        <div class="table-card">
+            <div class="header purple">CROP_OUTPUT (Prediction)</div>
+            <div class="row"><span>prediction_id</span><span class="type">UUID</span></div>
+            <div class="row"><span>recommended_crop</span><span class="type">STRING</span></div>
+            <div class="row"><span>confidence_score</span><span class="type">FLOAT</span></div>
+        </div>
+    </body>
+    </html>
+    """
+    
+    # Save it cleanly inside the design folder path
+    output_path = "3. Project Design Phase/database_schema_diagram.html"
+    with open(output_path, "w") as f:
+        f.write(html_content)
+    print("✨ Visual database schema layout generated successfully!")
+
+if __name__ == "__main__":
+    create_visual_schema()
