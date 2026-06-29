@@ -1,25 +1,15 @@
-# Phase 4: Project Planning & Execution Roadmap
+# Phase 4: Project Planning, Matrix Schedules & Risk Architecture
 
-## 1. Project Milestone Schedule (Gantt-Style Timeline)
-Our group project spans a 4-week structured development sprints cycle distributed as follows:
+## 1. Operational Resource Plan & Tasks
+- **Sprint 1 (Scoping Track):** Problem identification, empathy mapping matrices, FRS/NFRS parsing rules.
+- **Sprint 2 (Data Track):** Cleaning null cells, outlier handling arrays, StandardScaler transformer scaling.
+- **Sprint 3 (ML Track):** Ensemble Random Forest Classifier optimization, validation tracking loops.
+- **Sprint 4 (UI Deployment):** App layout state caching integration, performance evaluation logs.
 
-- **Week 1: Foundations & Architecture (Phases 1-3)**
-  - Problem scoping, empathy mapping, requirement analysis, and architectural system diagrams.
-- **Week 2: Data Engineering & Preprocessing (Phase 5 Starter)**
-  - Ingesting raw precision datasets, clean null values, handling feature distribution outliers, and engineering standard scaling arrays.
-- **Week 3: Model Inferences & Validation (Phase 5 Validation)**
-  - Initializing Random Forest configurations, training tree layer branches, hyperparameter optimization, and evaluating accuracy score matrices.
-- **Week 4: Front-End UI Assembly & Testing (Phases 5-8)**
-  - Injecting predictive states into Streamlit UI view components, compiling unit test verification cases, and pushing deployment repositories.
+## 2. Formal Evaluation Risk Assessment Matrix
 
-## 2. Resource & Task Allocation Matrix
-
-| Team Group Member Role | Assigned Technical Project Deliverables |
-| :--- | :--- |
-| **Project Lead / Data Engineer** | Dataset acquisition, cleaning scripts, vector transformer pipeline development, and data tracking files. |
-| **Machine Learning Engineer** | Random Forest model construction, hyperparameter tuning, model performance reports, and model binary serialization (). |
-| **UI Developer / QA Lead** | Streamlit front-end form layout building, predictive output routing, application testing cases, and profile synchronization. |
-
-## 3. Risk Mitigation & Contingency Framework
-- **Identified Technical Risk:** Inputting extreme out-of-bounds soil values (e.g., pH > 14) crashes or breaks the backend model decision path.
-- **Applied Contingency Control:** Embedded validation thresholds and min/max slider constraints directly into the Streamlit input forms to force data consistency before parsing array matrices.
+| Target Identified Risk Event | Initial Probability | Impact Score | Contingency Operations Control |
+| :--- | :--- | :--- | :--- |
+| **Out-of-Bounds User Input Data:** Farmer enters nonsensical metrics (e.g., pH 14, zero rainfall) which breaks model tree logic splits. | Medium | High | Embed min/max parameter limits and dynamic input form validation check barriers directly inside `app.py`. |
+| **Model Asset Path Failure:** Serialized weight binaries (`.pkl`) fail to unpickle at runtime, crashing the browser state. | Low | Critical | Implement an automated fallback try-catch conditional loop that re-runs the data cleaning and fitting sequence live if assets are missing. |
+| **Local Memory Overload:** Heavy user requests exhaust runtime memory on local web servers. | Low | Medium | Apply Streamlit resource caching annotations (`@st.cache_resource`) to lock the binaries into isolated cache slots. |
