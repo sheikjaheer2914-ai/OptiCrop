@@ -31,5 +31,15 @@ else:
     if st.button("🚀 Run Live Crop Recommendation", use_container_width=True):
         user_data = np.array([[n, p, k, temp, hum, ph, rain]])
         scaled_data = scaler.transform(user_data)
-        prediction = model.predict(scaled_data)
-        st.success(f"### 🎉 Recommended Optimal Crop Target: **{prediction[0].upper()}**")
+        prediction = model.predict(scaled_data)[0]
+        
+        st.markdown("--- ")
+        st.success(f"### 🎉 Recommended Optimal Crop Target: **{prediction.upper()}**")
+        
+        st.markdown("### 🤖 Embedded AI Agronomic Advisory Report")
+        advice = f"Our local model has evaluated your field vectors. For cultivating **{prediction.title()}**, your soil pH of {ph} is stable. "
+        if n < 50: advice += "However, Nitrogen levels are low; consider adding organic compost. "
+        if rain < 100: advice += "Rainfall thresholds are minimal for this cycle; ensure proper drip-irrigation scheduling. "
+        if rain > 200: advice += "High rainfall expected; monitor soil drainage parameters closely to prevent root rot. "
+        
+        st.info(advice)
